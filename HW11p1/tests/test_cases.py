@@ -1,12 +1,11 @@
 import unittest
-import subprocess
 import math
 from HW11p1 import hw_eleven_one
 from gradescope_utils.autograder_utils.decorators import weight, number
 
 class TestCases(unittest.TestCase):
 
-    @weight(15)
+    @weight(12.5)
     @number("1.1")
     def test_case_one(self):
         """Vo = 23, K = 0.123, m = 10"""
@@ -15,7 +14,7 @@ class TestCases(unittest.TestCase):
         assert math.isclose(result, expected_output, rel_tol=1e-3), "Output does not match expected output."
 
 
-    @weight(15)
+    @weight(12.5)
     @number("1.2")
     def test_case_two(self):
         """Vo = 10, K = 0.123, m = 23"""
@@ -24,7 +23,7 @@ class TestCases(unittest.TestCase):
         assert math.isclose(result, expected_output, rel_tol=1e-3), "Output does not match expected output."
 
     
-    @weight(15)
+    @weight(12.5)
     @number("1.3")
     def test_case_three(self):
         """Vo = 25, K = 0.5, m = 10"""
@@ -33,7 +32,7 @@ class TestCases(unittest.TestCase):
         assert math.isclose(result, expected_output, rel_tol=1e-3), "Output does not match expected output."
     
 
-    @weight(15)
+    @weight(12.5)
     @number("1.4")
     def test_case_four(self):
         """Vo = 100, K = 1, m = 100"""

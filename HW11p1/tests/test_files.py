@@ -5,7 +5,7 @@ from gradescope_utils.autograder_utils.files import check_submitted_files
 
 class TestFiles(unittest.TestCase):
     # define how many points it is
-    @weight(10)
+    @weight(20)
     # check for if a file with specified filename exists
     def test_submitted_files(self):
         """Check submitted files"""
