@@ -1,41 +1,97 @@
+from contextlib import redirect_stdout
+import io
+import sys
 import unittest
-import math
-from HW11p1 import hw_eleven_one
-from gradescope_utils.autograder_utils.decorators import weight, number
+from gradescope_utils.autograder_utils.decorators import weight
+
 
 class TestCases(unittest.TestCase):
-
-    @weight(12.5)
-    @number("1.1")
+    @weight(10)
     def test_case_one(self):
-        """Vo = 23, K = 0.123, m = 10"""
-        result = hw_eleven_one(23, 0.123, 10)
-        expected_output = 904.698
-        assert math.isclose(result, expected_output, rel_tol=1e-3), "Output does not match expected output."
+        """Test Case 1: Vo = 23, K = 0.123, m = 10"""
+        input_values = ["23", "0.123", "10"]  # Simulated user input
+        input_str = '\n'.join(input_values) + '\n'
+        input_file = io.StringIO(input_str)
 
+        output_file = io.StringIO()
 
-    @weight(12.5)
-    @number("1.2")
+        original_stdin = sys.stdin
+        sys.stdin = input_file
+
+        with redirect_stdout(output_file):
+            # Here, the student's code should be run
+            exec(open("HW11p1.py").read())
+
+        sys.stdin = original_stdin
+
+        actual_output = output_file.getvalue().strip().split('\n')[-1].split()[-1]  # Get the last word of the last line of output
+        expected_output = "904.70"  # Adjust based on the expected format of the output
+        self.assertEqual(expected_output, actual_output, "Output does not match expected output.")
+
+    @weight(10)
     def test_case_two(self):
-        """Vo = 10, K = 0.123, m = 23"""
-        result = hw_eleven_one(10, 0.123, 23)
-        expected_output = 392.497
-        assert math.isclose(result, expected_output, rel_tol=1e-3), "Output does not match expected output."
+        """Test Case 2: Vo = 12, K = 0.123, m = 4"""
+        input_values = ["12", "0.123", "4"]  # Simulated user input
+        input_str = '\n'.join(input_values) + '\n'
+        input_file = io.StringIO(input_str)
 
-    
-    @weight(12.5)
-    @number("1.3")
+        output_file = io.StringIO()
+
+        original_stdin = sys.stdin
+        sys.stdin = input_file
+
+        with redirect_stdout(output_file):
+            # Here, the student's code should be run
+            exec(open("HW11p1.py").read())
+
+        sys.stdin = original_stdin
+
+        actual_output = output_file.getvalue().strip().split('\n')[-1].split()[-1]  # Get the last word of the last line of output
+        expected_output = "465.55"  # Adjust based on the expected format of the output
+        self.assertEqual(expected_output, actual_output, "Output does not match expected output.")
+
+
+    @weight(10)
     def test_case_three(self):
-        """Vo = 25, K = 0.5, m = 10"""
-        result = hw_eleven_one(25, 0.5, 10)
-        expected_output = 979.372
-        assert math.isclose(result, expected_output, rel_tol=1e-3), "Output does not match expected output."
-    
+        """Test Case 3: Vo = 5, K = 0.5, m = 5"""
+        input_values = ["5", "0.5", "5"]  # Simulated user input
+        input_str = '\n'.join(input_values) + '\n'
+        input_file = io.StringIO(input_str)
 
-    @weight(12.5)
-    @number("1.4")
+        output_file = io.StringIO()
+
+        original_stdin = sys.stdin
+        sys.stdin = input_file
+
+        with redirect_stdout(output_file):
+            # Here, the student's code should be run
+            exec(open("HW11p1.py").read())
+
+        sys.stdin = original_stdin
+
+        actual_output = output_file.getvalue().strip().split('\n')[-1].split()[-1]  # Get the last word of the last line of output
+        expected_output = "129.22"  # Adjust based on the expected format of the output
+        self.assertEqual(expected_output, actual_output, "Output does not match expected output.")
+
+
+    @weight(10)
     def test_case_four(self):
-        """Vo = 100, K = 1, m = 100"""
-        result = hw_eleven_one(100, 1, 100)
-        expected_output = 3939.72
-        assert math.isclose(result, expected_output, rel_tol=1e-3), "Output does not match expected output."
+        """Test Case 4: Vo = 1234, K = 0.1, m = 5"""
+        input_values = ["1234", "0.1", "5"]  # Simulated user input
+        input_str = '\n'.join(input_values) + '\n'
+        input_file = io.StringIO(input_str)
+
+        output_file = io.StringIO()
+
+        original_stdin = sys.stdin
+        sys.stdin = input_file
+
+        with redirect_stdout(output_file):
+            # Here, the student's code should be run
+            exec(open("HW11p1.py").read())
+
+        sys.stdin = original_stdin
+
+        actual_output = output_file.getvalue().strip().split('\n')[-1].split()[-1]  # Get the last word of the last line of output
+        expected_output = "48619.55"  # Adjust based on the expected format of the output
+        self.assertEqual(expected_output, actual_output, "Output does not match expected output.")
