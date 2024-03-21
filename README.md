@@ -4,6 +4,7 @@ This repo contains a set of automated tests developed in Python for University o
 
 These tests are designed to run against student Python homework submissions including:
 - Homework 11.1: Python (Sequential)
+- Homework 12.2: Python (Repetition)
 
 
 ## Credit

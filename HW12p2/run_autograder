@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/HW11p1.py /autograder/source/HW12p2.py
+
+cd /autograder/source
+
+python3 run_tests.py
